@@ -1,8 +1,17 @@
-*:before, *:after { content: ''; }
+body, html {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
 
 .slash-3 {
     height: 15px;
-    background-image: linear-gradient(55deg,
+    background-image: linear-gradient(150deg,
       hsl(0, 2%, 25%),
       hsla(0, 0%, 53%, 0.5) ,
       hsla(0, 0%, 5%, 1) ,
@@ -15,14 +24,68 @@
   }
   
 
- 
-.bookends {
-    position: relative;
-    border-width: 5px;
-    border-color: hsl(0, 0%, 50%) transparent;
-    height: 11px;
-    border-style: double;
-    width: 20%;
-  }
+ /* Remove margins and padding from the list */
+form {
+  margin-left: 10%;
+  padding: 0;
+  background-image: url(https://www.ppt-backgrounds.net/thumbs/notebook-paper-related-keywords--suggestions--notebook---wallpaper-ppt-backgrounds.jpg) ;
+  width: 80%;
+  height: 400px;
+}
 
- 
+ /* Style the list items  */
+ul li {
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  transition: 0.5s;
+  padding: 20px 120px 20px 90px;
+
+  /* make the list items unselectable  */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different posision  */
+ ul li:nth-child(odd) {
+  display: inline-block;
+  text-align: left;
+  margin-left: 140px;
+font-size: 18px;
+font-weight: bolder;
+font-family: 'Indie Flower', cursive;
+margin-top: 2px;
+}
+/* Set all even list items to a different posision  */
+ul li:nth-child(even) {
+text-align: right;
+display: inline-block;
+margin-left: 50px;
+font-size: 18px;
+font-weight: bolder;
+font-family: 'Indie Flower', cursive;
+margin-top: 2px;
+
+} 
+ /* Darker background-color on hover  */
+ul li:hover { 
+background: rgba(156, 63, 0, 0.616); 
+}
+
+ /* When clicked on, add a background color and strike out text  */
+ul li.checked {
+  background: rgba(250, 205, 184, 0.719);
+  color: #fff;
+  text-decoration: line-through;
+} 
+
+/* Add a "checked" mark when clicked on  */
+ ul li.checked::before {
+  content: '✔';
+  position: absolute;
+  top: 20px;
+  left: 95px;
+}   
+
